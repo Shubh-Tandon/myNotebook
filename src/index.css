@@ -48,7 +48,7 @@ i{
 #notesPic {
   float: right;
   height: 58%;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .myContainer{

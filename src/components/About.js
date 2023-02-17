@@ -23,8 +23,8 @@ const About = () => {
               <h5 className='para'>Join with me! Register, Login and Write. </h5>
           </div>
 
-          <div className='col-md-8 picClass'>
-          <img id='notesPic' src={NotesPic1} alt='Picture' />
+          <div className='container col-md-8'>
+          <img id='notesPic' src={NotesPic1} alt='myNotes' />
           </div>
         </div>
       </div>
