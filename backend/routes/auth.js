@@ -2,12 +2,13 @@ const express = require('express')
 const User = require('../models/User')
 const router = express.Router();
 const bcrypt = require('bcryptjs');
+const dotenv = require("dotenv");
 var jwt = require('jsonwebtoken');
 var fetchuser = require('../middleware/fetchuser')
 const { body, validationResult } = require('express-validator');
 var fetchuser = require('../middleware/fetchuser');
 
-const JWT_SECRET = "shubhtandonmerndeveloper";  //secret key for token
+const JWT_SECRET = process.env.JWT_SECRET;
 
 //Route 1:  Create a user using: POST "/api/auth/createuser", Does not require Auth ---No login required
 router.post('/createuser', [
@@ -49,7 +50,7 @@ router.post('/createuser', [
  
       } catch(error){
         console.error(error.message);
-        res.status(500).send("Internal Server error occured")
+        res.status(500).send("Internal 01 Server error occured")
       }}
        )  
 
@@ -92,7 +93,7 @@ router.post('/createuser', [
 
     }catch(error){
         console.error(error.message);
-        res.status(500).send("Internal Server error occured")
+        res.status(500).send("Internal 02 Server error occured")
       }
     }
 )
@@ -107,7 +108,7 @@ try {
   
 } catch (error) {
   console.error(error.message);
-  res.status(500).send("Internal Server error occured")
+  res.status(500).send("Internal 03 Server error occured")
 }
 })
 

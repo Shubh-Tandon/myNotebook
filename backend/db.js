@@ -6,11 +6,11 @@ dotenv.config({ path : './config.env'});
 
 const mongoURI = process.env.DATABASE;
 
-mongoose.set('strictQuery', true);
+// mongoose.set('strictQuery', true);
 
 
-const connectToMongo = ()=> {
-    mongoose.connect(mongoURI, ()=>{
+const connectToMongo = async ()=> {
+   await mongoose.connect(mongoURI, ()=>{
     console.log('Connected to Mongo Successfully');
 })
 }
