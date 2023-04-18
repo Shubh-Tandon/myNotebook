@@ -112,4 +112,63 @@ try {
 }
 })
 
+//Route 3:  Get loggedin user details using: POST "/api/auth/getuser", Does not require Auth ---login required
+router.post('https://dev.29kreativ.com/recruitment/levels/',fetchuser, async (req,res) => {
+try {
+  const name = req.body.name;
+  const code = req.body.code;
+  console.log("name",name);
+  console.log("code", code);
+  res.status(200).send({"name": name, "code": code.toString()})
+  
+} catch (error) {
+  console.error(error.message);
+  res.status(500).send("Internal 03 Server error occured")
+}
+})
+
+
+
+
+
+
+// const formData = new FormData();
+
+
+// // formData.append("name",name )
+// // formData.append('code', code);
+
+// router.post('https://dev.29kreativ.com/recruitment/levels/', (req,res)=> {
+//   // const name = "Shubh";
+//   // const code = "3667dfe4a66089c51620ee63ed2db0c3"
+//   const name = req.body.name;
+//   const code = req.body.code;
+//   // res.setHeader('Authorization', 'Bearer' + code)
+
+//   console.log("name",name);
+//   console.log("code", code);
+//   res.status(200).send({"name": name, "code": code.toString()})
+// })
+
+
+
+
+
+
+
 module.exports = router;
+
+// fetch('https://dev.29kreativ.com/recruitment/levels/',{
+//     method: 'POST',
+//     headers: {
+//         'Authorization': 'Bearer' + code
+//     },
+//     body: formData,
+// }).then(response => {
+//     // response.end(JSON.stringify({name: name, code: code.toString()}))
+//     console.log("name :" + name);
+//     console.log("code:" + code);
+
+// }).catch(err =>{
+//     console.log(err);
+// })
